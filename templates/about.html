@@ -1,0 +1,158 @@
+{% extends "index.html" %}
+{% block content %}
+<section>
+    <div class="bg-light">
+        <div class="container py-5">
+            <div class="row h-100 align-items-center py-5">
+                <div class="col-lg-6 d-none d-lg-block"><img
+                        src="{{url_for('static', filename='images/' + 'aboutus1.png')}}"
+                        alt="A stylish woman in the jungle" class="img-fluid"></div>
+                <div class="col-lg-6">
+                    <h1 class="display-4 text-black">About Us</h1>
+                    <p class="lead text-black mb-0">Welcome to Cherie's, an exquisite online women's clothing shop that
+                        celebrates the essence of style, empowerment, and individuality. At Cherie's, we strive to
+                        provide
+                        a seamless shopping experience, offering a curated collection of fashionable apparel and
+                        accessories that cater to the diverse tastes and preferences of modern women.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white py-5">
+        <div class="container py-5">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-5 px-5 mx-auto order-1 order-lg-2"><img
+                        src="{{url_for('static', filename='images/' + 'aboutus2.png')}}"
+                        alt="Two uniquely stylish women" class="img-fluid mb-4 mb-lg-0"></div>
+                <div class="col-lg-6 order-2 order-lg-1"><i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
+                    <h2 class="font-weight-light">Our Mission</h2>
+                    <p class="font-italic text-muted mb-4">Our mission at Cherie's is to inspire and empower women to
+                        embrace their uniqueness and express themselves through fashion. We believe that clothing is not
+                        just about covering the body but a powerful tool for self-expression and confidence. We aim to
+                        create a space where every woman can find clothing that reflects her personality, boosts her
+                        confidence, and makes her feel beautiful, inside and out.</p>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-5 px-5 mx-auto"><img src="{{url_for('static', filename='images/' + 'aboutus3.png')}}"
+                        alt="Three gorgeous women in dresses" class="img-fluid mb-4 mb-lg-0"></div>
+                <div class="col-lg-6"><i class="fa fa-leaf fa-2x mb-3 text-primary"></i>
+                    <h2 class="font-weight-light">Our values</h2>
+                    <p class="font-italic text-muted mb-4">At the core of our values is inclusivity. We embrace and
+                        celebrate diversity in all its forms, offering a wide range of sizes, styles, and designs that
+                        cater to women of different body types, ages, and backgrounds. We believe that fashion has no
+                        boundaries and should be accessible to everyone, allowing every woman to embrace her own sense
+                        of style.</p>
+                    <p class="font-italic text-muted mb-4">Quality and craftsmanship are of utmost importance to us. We
+                        meticulously select each garment in our collection, ensuring that they are made from
+                        high-quality materials and crafted with attention to detail. Our commitment to quality extends
+                        beyond the products we offer; it also encompasses our dedication to providing exceptional
+                        customer service and a seamless shopping experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-light py-5">
+        <div class="container py-5">
+            <div class="row mb-4">
+                <div class="col-lg-5">
+                    <h2 class="display-4 font-weight-light">Our team</h2>
+                    <p class="font-italic text-muted">Meet our amazing team.</p>
+                </div>
+            </div>
+
+            <div class="row text-center">
+                <!-- Team item-->
+                <div class="col-xl-3 col-sm-6 mb-5">
+                    <div class="bg-white rounded shadow-sm py-5 px-4"><img
+                            src="{{url_for('static', filename='images/' + 'team1.jpg')}}"
+                            alt="Picture of the CEO Founder Dinara Akmurzina" width="100"
+                            class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                        <h5 class="mb-0">Dinara Akmurzina</h5><span class="small text-uppercase text-muted">CEO -
+                            Founder</span>
+                        <ul class="social mb-0 list-inline mt-3">
+                            <li class="list-inline-item"><a href="#" class="social-link"><i
+                                        class="fa fa-facebook-f"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="social-link"><i
+                                        class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="social-link"><i
+                                        class="fa fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="social-link"><i
+                                        class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End-->
+
+                <!-- Team item-->
+                <div class="col-xl-3 col-sm-6 mb-5">
+                    <div class="bg-white rounded shadow-sm py-5 px-4"><img
+                            src="{{url_for('static', filename='images/' + 'team2.jpeg')}}"
+                            alt="Picture of the CEO Founder Monica Geller" width="100"
+                            class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                        <h5 class="mb-0">Monica Geller</h5><span class="small text-uppercase text-muted">CEO -
+                            Founder</span>
+                        <ul class="social mb-0 list-inline mt-3">
+                            <li class="list-inline-item"><a href="#" class="social-link"><i
+                                        class="fa fa-facebook-f"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="social-link"><i
+                                        class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="social-link"><i
+                                        class="fa fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="social-link"><i
+                                        class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End-->
+
+                <!-- Team item-->
+                <div class="col-xl-3 col-sm-6 mb-5">
+                    <div class="bg-white rounded shadow-sm py-5 px-4"><img
+                            src="{{url_for('static', filename='images/' + 'team3.jpeg')}}"
+                            alt="Picture of the Creative Manager Rachel Green" width="100"
+                            class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                        <h5 class="mb-0">Rachel Green </h5><span class="small text-uppercase text-muted">Creative
+                            Manager</span>
+                        <ul class="social mb-0 list-inline mt-3">
+                            <li class="list-inline-item"><a href="#" class="social-link"><i
+                                        class="fa fa-facebook-f"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="social-link"><i
+                                        class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="social-link"><i
+                                        class="fa fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="social-link"><i
+                                        class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End-->
+
+                <!-- Team item-->
+                <div class="col-xl-3 col-sm-6 mb-5">
+                    <div class="bg-white rounded shadow-sm py-5 px-4"><img
+                            src="{{url_for('static', filename='images/' + 'team4.png')}}" alt="" width="100"
+                            class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+                        <h5 class="mb-0">Pheobe Buffay</h5><span class="small text-uppercase text-muted">Executive
+                            Manager</span>
+                        <ul class="social mb-0 list-inline mt-3">
+                            <li class="list-inline-item"><a href="#" class="social-link"><i
+                                        class="fa fa-facebook-f"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="social-link"><i
+                                        class="fa fa-twitter"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="social-link"><i
+                                        class="fa fa-instagram"></i></a></li>
+                            <li class="list-inline-item"><a href="#" class="social-link"><i
+                                        class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- End-->
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
