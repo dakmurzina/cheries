@@ -3,11 +3,11 @@ from flask import Flask, render_template, request, session
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
 
-# Dummy data for products
+# Products in the store
 products = [
     {
         "type": "clothing",
-        "id": 0,
+        "id": "0",
         "name": "Black Elegance Dress",
         "price": 100,
         "img": "dress.png",
@@ -15,7 +15,7 @@ products = [
     },
     {
         "type": "clothing",
-        "id": 1,
+        "id": "1",
         "name": "Shimmering Nights Skirt",
         "price": 85,
         "img": "skirt2.png",
@@ -23,7 +23,7 @@ products = [
     },
     {
         "type": "clothing",
-        "id": 2,
+        "id": "2",
         "name": "Blushing Petals Cardigan",
         "price": 45,
         "img": "cardigan.png",
@@ -31,7 +31,7 @@ products = [
     },
     {
         "type": "clothing",
-        "id": 3,
+        "id": "3",
         "name": "Sky High Jeans",
         "price": 40,
         "img": "jeans.png",
@@ -39,7 +39,7 @@ products = [
     },
     {
         "type": "clothing",
-        "id": 4,
+        "id": "4",
         "name": "Classic Black T-Shirt",
         "price": 25,
         "img": "t-shirt.png",
@@ -47,7 +47,7 @@ products = [
     },
     {
         "type": "clothing",
-        "id": 5,
+        "id": "5",
         "name": "Summer Breeze Top",
         "price": 15,
         "img": "top.png",
@@ -55,7 +55,7 @@ products = [
     },
     {
         "type": "shoes",
-        "id": 6,
+        "id": "6",
         "name": "Sunlit Radiance High Heels",
         "price": 90,
         "img": "heels.png",
@@ -63,7 +63,7 @@ products = [
     },
     {
         "type": "shoes",
-        "id": 7,
+        "id": "7",
         "name": "Sunset Breeze Summer Sandals",
         "price": 38,
         "img": "sandals.png",
@@ -71,7 +71,7 @@ products = [
     },
     {
         "type": "shoes",
-        "id": 8,
+        "id": "8",
         "name": "Elegance in Bloom Shoes",
         "price": 65,
         "img": "summer-shoes.png",
@@ -79,7 +79,7 @@ products = [
     },
     {
         "type": "shoes",
-        "id": 9,
+        "id": "9",
         "name": "Active Stride Trainers",
         "price": 110,
         "img": "trainers.png",
@@ -87,7 +87,7 @@ products = [
     },
     {
         "type": "accessories",
-        "id": 10,
+        "id": "10",
         "name": "Celestial Elegance Necklace",
         "price": 130,
         "img": "necklace.png",
@@ -95,7 +95,7 @@ products = [
     },
     {
         "type": "accessories",
-        "id": 11,
+        "id": "11",
         "name": "Radiant Harmony Bracelet",
         "price": 90,
         "img": "bracelet.png",
@@ -103,7 +103,7 @@ products = [
     },
     {
         "type": "accessories",
-        "id": 12,
+        "id": "12",
         "name": "Eternal Sparkle Earrings",
         "price": 80,
         "img": "earings.png",
@@ -111,7 +111,7 @@ products = [
     },
     {
         "type": "accessories",
-        "id": 13,
+        "id": "13",
         "name": "Timeless Brilliance Ring",
         "price": 65,
         "img": "ring.png",
@@ -119,9 +119,7 @@ products = [
     }
 ]
 
-# Cart to store selected products
-cart = {}
-number_of_items_in_cart = sum(list(cart.values()))
+# Filter products in the store for three different pages
 clothing_products = [
     product for product in products if product['type'] == "clothing"]
 shoes_products = [
@@ -129,107 +127,104 @@ shoes_products = [
 accessories_products = [
     product for product in products if product['type'] == "accessories"]
 
+# Calculate the number of items in the cart
+
+
+def calculate_no_items_in_cart():
+    cart = session['cart'] if 'cart' in session else {}
+    return sum(list(cart.values()))
+
 
 @app.route('/')
 def home():
-    return render_template('index.html', cart=number_of_items_in_cart)
+    return render_template('index.html', total_no_items=calculate_no_items_in_cart())
 
 
 @app.route('/about')
 def about():
-    return render_template('about.html', cart=number_of_items_in_cart)
+    return render_template('about.html', total_no_items=calculate_no_items_in_cart())
 
 
 @app.route('/clothing')
 def show_clothes():
-    return render_template('products.html', products=clothing_products, cart=number_of_items_in_cart)
+    return render_template('products.html', products=clothing_products, total_no_items=calculate_no_items_in_cart())
 
 
 @app.route('/shoes')
 def show_shoes():
-    return render_template('products.html', products=shoes_products, cart=number_of_items_in_cart)
+    return render_template('products.html', products=shoes_products, total_no_items=calculate_no_items_in_cart())
 
 
 @app.route('/accessories')
 def show_accessories():
-    return render_template('products.html', products=accessories_products, cart=number_of_items_in_cart)
+    return render_template('products.html', products=accessories_products, total_no_items=calculate_no_items_in_cart())
 
 
-@app.route('/clothing/<int:id>', methods=['GET', 'POST'])
+@app.route('/clothing/<id>', methods=['GET', 'POST'])
 def show_clothes_detail(id):
     quantity = None
     if request.method == 'POST':
         quantity = int(request.form.get('input'))
         add_to_cart(id, quantity)
-    return render_template('product.html', products=clothing_products, id=id, cart=number_of_items_in_cart, input=quantity)
+    return render_template('product.html', products=clothing_products, id=id, total_no_items=calculate_no_items_in_cart(), input=quantity)
 
 
-@app.route('/shoes/<int:id>', methods=['GET', 'POST'])
+@app.route('/shoes/<id>', methods=['GET', 'POST'])
 def show_shoes_detail(id):
     quantity = None
     if request.method == 'POST':
         quantity = int(request.form.get('input'))
         add_to_cart(id, quantity)
-    return render_template('product.html', products=shoes_products, id=id, cart=number_of_items_in_cart, input=quantity)
+    return render_template('product.html', products=shoes_products, id=id, total_no_items=calculate_no_items_in_cart(), input=quantity)
 
 
-@app.route('/accessories/<int:id>', methods=['GET', 'POST'])
+@app.route('/accessories/<id>', methods=['GET', 'POST'])
 def show_accessories_detail(id):
     quantity = None
     if request.method == 'POST':
         quantity = int(request.form.get('input'))
         add_to_cart(id, quantity)
-    return render_template('product.html', products=accessories_products, id=id, cart=number_of_items_in_cart, input=quantity)
+    return render_template('product.html', products=accessories_products, id=id, total_no_items=calculate_no_items_in_cart(), input=quantity)
 
 
 @app.route('/cart')
 def show_cart():
     if 'cart' in session:
         cart = session['cart']
+    products_in_cart = []
     for k in cart.keys():
-        products_in_cart = [
-            product for product in products if product['id'] == k]
-    quantity = cart.values()
+        for product in products:
+            if product['id'] == k:
+                products_in_cart.append(product)
     total_price = calculate_total_price()
-    return render_template('cart.html', items=products_in_cart, quantity=quantity, total_price=total_price, cart=number_of_items_in_cart)
+    total_no_items = sum(list(cart.values()))
+    return render_template('cart.html', items=products_in_cart, total_price=total_price, cart=cart, total_no_items=calculate_no_items_in_cart())
 
 
 @app.route('/checkout')
 def checkout():
     return render_template('checkout.html')
 
-# Helper functions
-
-
-# def get_product_by_id(id):
-#     for product in products:
-#         if product['id'] == id:
-#             return product
-#     return None
+# Add items and their quantity to the cart
 
 
 def add_to_cart(id, quantity):
-    global cart
-    if 'cart' not in session:
-        session['cart'] = cart
-    cart = session.get('cart')
+    cart = session['cart'] if 'cart' in session else {}
     if id not in cart:
         cart[id] = quantity
     else:
         cart[id] += quantity
     session['cart'] = cart
 
+# Calculate the total price
+
 
 def calculate_total_price():
     total_price = 0
     if 'cart' in session:
         cart = session['cart']
-    quantities = []
     for id, quantity in cart.items():
-        prices = [product['price']
-                  for product in products if product['id'] == id]
-        quantities.append(quantity)
-
-    for price, quantity in zip(prices, quantities):
-        total_price += int(price) * int(quantity)
+        product_price = [product['price']
+                         for product in products if product['id'] == id][0]
+        total_price += product_price * quantity
     return total_price
