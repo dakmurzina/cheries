@@ -22,7 +22,7 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#test-and-explore">Test and Explore</a></li>
+        <li><a href="#explore-and-test">Explore and Test</a></li>
         <li><a href="#customization">Custamization</a></li>
       </ul>
     </li>
@@ -49,7 +49,7 @@ The application features dynamic product detail pages (/clothing/<id>, /shoes/<i
 
 A checkout page (/checkout) is provided, though the specific details of the checkout process are not implemented in this code snippet.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#about-the-project">back to top</a>)</p>
 
 
 
@@ -90,7 +90,7 @@ Test the dynamic product detail pages and the checkout process.
 
 Customize the product catalog by modifying the products list in the app.py file.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#about-the-project">back to top</a>)</p>
 
 
 
@@ -101,7 +101,7 @@ Dinara Akmurzina - [@dinara-almurzina](https://www.linkedin.com/in/dinara-akmurz
 
 Project Link: [https://github.com/dakmurzina/cheries](https://github.com/dakmurzina/cheries)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right">(<a href="#about-the-project">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
