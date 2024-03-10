@@ -1,19 +1,12 @@
-<!-- PROJECT LOGO -->
+<!-- PROJECT -->
 <br />
 <div align="center">
-  <a href="https://github.com/dakmurzina/cheries/blob/main/static/icon.ico">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
   <h3 align="center">Website Development</h3>
-
   <p align="center">
-    Online Store 'Cheries'
+    Online Store CHERIES
     <br />
   </p>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -33,11 +26,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -46,18 +35,19 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+The Online Store CHERIES is a learning project as part of Website Development course. CHERIES is a web-based e-commerce platform using Flask, a Python web framework. This platform offers a range of products, including clothing, shoes, and accessories, and allows users to browse, add items to their cart, and proceed to checkout.
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
+The product information, encompassing details such as type, ID, name, price, image, and description, is structured in a list of dictionaries named products. Each product is categorized into clothing, shoes, or accessories.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+Navigation within the application is facilitated through different routes. The home page (/) and an about page (/about) provide general information, while specific pages for clothing (/clothing), shoes (/shoes), and accessories (/accessories) allow users to explore products in these categories.
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+Cart management is a key feature, allowing users to add products to their cart, with the quantity of each item being tracked. The cart information is stored in the user's session, leveraging Flask's session functionality.
 
-Use the `BLANK_README.md` to get started.
+Product information is displayed dynamically on various pages (products.html and product.html) based on the product type. Users can view their cart (/cart), which displays the items, total price, and provides a link to the checkout page (/checkout).
+
+The application features dynamic product detail pages (/clothing/<id>, /shoes/<id>, /accessories/<id>), where users can add items to their cart. The backend calculates the total price of items in the cart.
+
+A checkout page (/checkout) is provided, though the specific details of the checkout process are not implemented in this code snippet.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -67,14 +57,10 @@ Use the `BLANK_README.md` to get started.
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
+* [![Python][Python.py]][Python-url]
+* [![HTML][HTML]][HTML-url]
+* [![CSS][CSS]][CSS-url]
 * [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
