@@ -58,9 +58,9 @@ A checkout page (/checkout) is provided, though the specific details of the chec
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
 * [```Python```](https://www.python.org/)
-* [![HTML][HTML]][HTML-url]
-* [![CSS][CSS]][CSS-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* ```HTML```
+* ```CSS```
+* ```Bootstrap```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
