@@ -77,7 +77,7 @@ Clone the repository: git clone https://github.com/dakmurzina/cheries.git
 Navigate to the project directory: cd cheries
 Run the Application
 
-Execute the following command: python app.py
+Execute the following command: ```python app.py```
 Open a web browser and go to http://localhost:5000/ to access the platform.
 
 ### Explore and Test
