@@ -3,7 +3,7 @@
 <div align="center">
   <h3 align="center">Website Development</h3>
   <p align="center">
-    Online Store CHERIES
+    Online Store CHERRIES
     <br />
   </p>
 </div>
@@ -35,7 +35,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The Online Store CHERIES is a learning project as part of Website Development course. CHERIES is a web-based e-commerce platform using Flask, a Python web framework. This platform offers a range of products, including clothing, shoes, and accessories, and allows users to browse, add items to their cart, and proceed to checkout.
+The Online Store CHERRIES is a learning project as part of Website Development course. CHERRIES is a web-based e-commerce platform using Flask, a Python web framework. This platform offers a range of products, including clothing, shoes, and accessories, and allows users to browse, add items to their cart, and proceed to checkout.
 
 The product information, encompassing details such as type, ID, name, price, image, and description, is structured in a list of dictionaries named products. Each product is categorized into clothing, shoes, or accessories.
 
